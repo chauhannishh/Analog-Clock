@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		CLOCK
+	</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script>
+		function initTime() {
+			var date = new Date;
+			var seconds = date.getSeconds();
+			var minutes = date.getMinutes();
+			var hours = date.getHours() % 12;
+
+			// var sangle = (seconds * 6);
+			// var mangle = (minutes * 6);
+			// var hangle = (hours * 30) + (minutes / 2);
+
+			var hrhand = document.getElementsByClassName("hours");
+			var minhand = document.getElementsByClassName("minutes");
+			var sechand = document.getElementsByClassName("seconds");
+
+			// hrhand.style.transform = 'rotateZ('+ hangle +'deg)';
+			// minhand.style.transform = 'rotateZ('+ mangle +'deg)';
+			// sechand.style.transform = 'rotateZ('+ sangle +'deg)';
+
+			var hourDeg = hours * 30 + (0.5 * minutes);
+			var minuteDeg = minutes * 6 + (0.5 * seconds);
+			var secondDeg = seconds *6;
+
+			hrhand[0].style.transform = 'rotate(' + hourDeg + 'deg)';
+			minhand[0].style.transform = 'rotate(' + minuteDeg + 'deg)';
+			sechand[0].style.transform = 'rotate(' + secondDeg + 'deg)';
+
+			setTimeout(initTime, 1000);
+		}
+	</script>
+</head>
+<body onload="initTime()">
+	<div class="clock">
+	  <div class="hours-container">
+	    <div class="hours"></div>
+	  </div>
+	  <div class="minutes-container">
+	    <div class="minutes"></div>
+	  </div>
+	  <div class="seconds-container">
+	    <div class="seconds"></div>
+	  </div>
+	</div>
+</body>
+</html>

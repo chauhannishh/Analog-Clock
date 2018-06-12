@@ -1,0 +1,70 @@
+body
+{
+	background-color: #000;
+}
+.clock {
+      border-radius: 50%;
+    background: #fff url(https://cssanimation.rocks/images/posts/clocks/ios_clock.svg) no-repeat center;
+    background-size: 88%;
+    height: 500px;
+    position: relative;
+    width: 500px;
+    margin-left: 27.5%;
+    margin-top: 9%;
+}
+
+.clock:after {
+  background: #000;
+  border-radius: 50%;
+  content: "";
+  width: 5%;
+  height: 5%;
+  z-index: 10;	/*So that it remains on the top after hour, min, sec hand on it*/
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hours
+{
+	background-color: #000;
+    height: 115px;
+    width: 15px;
+    position: absolute;
+    top: 138px;
+    left: 242px;
+    z-index: 4;
+   /* animation: rotate 43200s linear infinite;*/
+    transform-origin: bottom;
+}
+.minutes
+{
+	background-color: #000;
+    height: 153px;
+    width: 10px;
+    position: absolute;
+    top: 100px;
+    left: 245px;
+    z-index: 6;
+    /*animation: rotate 3600s linear infinite;*/
+    transform-origin: bottom;
+}
+.seconds
+{
+	background-color: red;
+    height: 180px;
+    width: 5px;
+    position: absolute;
+    top: 76px;
+    left: 248px;
+    z-index: 8;
+    /*animation: rotate 60s steps(60, end) infinite;*/
+    transform-origin: bottom;
+}
+/*
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}*/
